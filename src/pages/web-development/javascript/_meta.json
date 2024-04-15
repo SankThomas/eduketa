@@ -12,9 +12,11 @@
   "callbacks": "Callbacks",
   "promises": "Promises",
   "async-await": "Async / Await",
+  "dates": "Dates",
   "closures": "Closures",
   "bigint": "BigInt",
-  "error-handling": "Error Handling",
+  "error-handling-and-debugging": "Error Handling and Debugging",
   "hoisting": "Hoisting",
-  "dates": "Dates"
+  "debouncing": "Debouncing",
+  "throttling": "Throttling"
 }
