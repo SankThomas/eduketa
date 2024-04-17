@@ -6,6 +6,7 @@
   "arrays": "Arrays",
   "objects": "Objects",
   "strings": "Strings",
+  "data-structures": "Data Structures",
   "classes": "Classes",
   "control-flow": "Control Flow",
   "loops": "Loops",
@@ -18,5 +19,7 @@
   "error-handling-and-debugging": "Error Handling and Debugging",
   "hoisting": "Hoisting",
   "debouncing": "Debouncing",
-  "throttling": "Throttling"
+  "throttling": "Throttling",
+  "javascript-errors": "JavaScript Errors",
+  "reserved-words": "JavaScript Reserved Words"
 }
