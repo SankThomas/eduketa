@@ -2,8 +2,6 @@ import { Callout } from "nextra-theme-docs";
 
 # Arrays
 
-<Callout>This page is under Construction</Callout>
-
 Arrays are a special type of variable that can hold multiple values. We already know how to declare variables in JavaScript, so take a look at the example below:
 
 ``` javascript
@@ -30,7 +28,7 @@ Arrays are especially useful when you are declaring varibales of the same type. 
 
 ## How to write arrays
 
-#### Using array literals
+#### 1. Using array literals
 
 We have already seen this method in action in the example above. It is simply declaring a variable name and assigning values to it. Take a look below:
 
@@ -51,7 +49,7 @@ The two examples above do the exact same thing. However, method one is only used
 To better understand **Example 1**, read more about [Accessing the values of an array](#accessing-the-values-of-an-array).
 
 
-#### Using the `new` keyword
+#### 2. Using the `new` keyword
 
 The `new` keyword is a reserved word in JavaScript, and you can use it to declare an array in the following way:
 
@@ -203,7 +201,7 @@ console.log(typeof yourArray); // Returns "object"
 ### Array Methods
 You can perform a number of functions on any array, ranging from getting the number of items in the array, to sorting the array in some type of order. Below are the common array methods.
 
-#### length
+#### `length`
 
 This is used to get the number of items in an array.
 
@@ -236,7 +234,7 @@ console.log(fruits); // Expected result: ["banan", "orange", "pear", "apple", "m
 // Lemon is now added to the array
 ```
 
-#### toString
+#### `toString`
 
 This is used to converted an array into a comma separated list of values.
 
@@ -248,7 +246,7 @@ const fruits = ["banana", "orange", "pear", "apple", "mango"];
 console.log(fruits.toString()); // Returns: banana,orange,pear,apple,mango
 ```
 
-#### at
+#### `at`
 
 This returns an indexed element from an array.
 
@@ -261,7 +259,7 @@ console.log(fruits.at(1)); // Returns: orange - because arrays are indexed from 
 console.log(fruits.at(4)); // Returns: mango
 ```
 
-#### join
+#### `join`
 
 Just like the `.toString()` method, `.join` also joins all array elements into one, with the additional control that you can specify the separator.
 
@@ -273,7 +271,7 @@ fruits.join(" - ");
 console.log(fruits); // Expected Result: banana - orange - pear - apple - mango
 ```
 
-#### shift
+#### `shift`
 
 This is used to remove the first element of an array.
 
@@ -286,7 +284,7 @@ fruits.shift();
 console.log(fruits); // Expected result: ["orange", "pear", "apple", "mango"]
 ```
 
-#### unshift
+#### `unshift`
 
 This is used to add a new element to the beginning of an array.
 
@@ -299,7 +297,7 @@ fruits.unshift("pineapple");
 console.log(fruits); // Expected result: ["pineapple", "banana", "orange", "pear", "apple", "mango"]
 ```
 
-#### concat
+#### `concat`
 
 Concat is short for "concatenate"  which means "to join stings end to end". Therefore, using the `concat` method will join two array elements to one.
 
@@ -324,21 +322,154 @@ console.log(carName); // Expected result: BMW M3GTR E46
   ```
 </Callout>
 
-#### copyWithin
+#### `copyWithin`
 
-#### flat
+This is used to copy an element in an array to another position in the same array. This does not add a new element to the array. Therefore, the new array will have the same length.
 
-#### splice
+**Example 1:**
 
-#### toSpliced
+``` javascript
+const fruits = ["banana", "orange", "pear", "apple", "mango"];
+fruits.copyWithin(2, 0);
 
-#### slice
+console.log(fruits); // Expected result: ["banana", "orange", "banana", "orange"]
+```
 
-#### sort
+The statement `fruits.copyWithin(2, 0);` means, copy to index 2 (the third item) of the array, all the elements starting from index 0 (the first item) of the array.
 
-#### map
+> `copyWithin` overwrites the existing array while still preserving its length.
 
-#### pop
+**Example 2:**
+
+``` javascript
+const fruits = ["banana", "orange", "pear", "apple", "mango", "pineapple", "lemon"];
+fruits.copyWithin(2, 0, 2);
+
+console.log(fruits); // Expected result: ["banana", "orange", "banana", "orange", "mango", "pineapple", "lemon"]
+```
+
+The above means, copy up to index 2 (the third item), all the elements starting from index 0 (the first item) up to index 2 (the third item). Compare the results from Example 2 with the results from Example 1.
+
+#### `flat`
+
+This is used to reduce multi-dimensional into one-dimensional arrays.
+
+You can think of multi-dimensional arrays like tables containing rows and columns. Therefore, it is an array of arrays. Below is an example of a multi-dimensional array:
+
+
+``` javascript
+const multiDimArray = [[1, 2], [3, 4], [5, 6]];
+```
+
+<Callout type="info">
+  A multi-dimensional array is an array of arrays.
+</Callout>
+
+When we want to reduce this kind of an array into a one-dimensional array, we use the `flat` method as below:
+
+``` javascript
+const multiDimArray = [[1, 2], [3, 4], [5, 6]];
+
+multiDimArray.flat();
+console.log(multiDimArray); // Expected result: 1,2,3,4,5,6
+```
+
+#### `splice`
+
+Just like splicing in English means to join two parts of something, the `splice` method will add new items to an array - but can also be used to remove elements from an array.
+
+**For example:**
+
+``` javascript
+// Once again with the fruits example
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruits.splice(2, 0, "Pineapple", "Lemon"));
+
+// Expected result: ["Banana", "Orange", "Pineapple", "Lemon", "Apple", "Mango"]
+```
+
+The above block of code can be interpreted as follows: Begin adding new items from the second index of the array, i.e the third item, without removing any elements from the array, i.e 0.
+
+Take a look at the modified example below in which the `splice` method is used to remove items from an array:
+
+``` javascript
+// Once again with the fruits example
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruits.splice(2, 2, "Pineapple", "Lemon"));
+
+// Expected result: ["Banana", "Orange", "Pineapple", "Lemon"]
+```
+
+The above means: start adding the items form the second index of the array, and remove 2 trailing elements after the new ones have been added. Therefore, even the new array will change in length.
+
+<Callout type="info">
+  When using `splice`, the first parameter is used to define the position at which the new elements should be added. The second parameter defines how many elements should be removed after the new ones have been added in.
+</Callout>
+
+#### `slice`
+
+Not to be confused with `splice`, the `slice` method is used is used to cut out a piece of an array, like a slice of cake.
+
+**For example:**
+
+``` javascript
+// Once again with the fruits example
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruits.slice(2)); // Expected result: ["Apple, Mango"]
+```
+
+The above removes the first and second elements of the array because we have specified the slicing to start from index 2 which is the third element of the array.
+
+`slice` can also take in two arguments as follows: `slice(1, 3)`. This will return the elements between index 1 (the second item) and index 3 (the fourth item). Therefore, using the example above, you will have something of the sorts:
+
+``` javascript
+// Once again with the fruits example
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruits.slice(1, 3)); // Expected result: ["Apple, Mango"]
+```
+
+#### `toSpliced`
+
+This is similar to `splice` with the difference being that `toSpliced` leaves the original array unchanged and then returns a new array with the spliced elements.
+
+**For example:**
+
+``` javascript
+const fruits = ["banana", "orange", "apple", "mango"];
+console.log(fruits.toSpliced(0, 2, "pineapple")); // Expected result: ["apple", "mango"] 
+```
+
+The above example splices the array from the first element (index 0) to the third element (index 2) and then returns the remaining elements in the array.
+
+#### `sort`
+
+This is used to sort an array in alphabetical order.
+
+**For example:**
+
+``` javascript
+const fruits = ["banana", "orange", "apple", "mango"];
+console.log(fruits.sort()); // Expected result: ["apple", "banana", "mango", "orange"]
+```
+
+Sorting arrays in JavaScript is a topic of its own which you can read about in [Sorting Arrays](/web-development/javascript/sorting-arrays)
+
+#### `map`
+
+This is used to loop over the elements of an array and then perform some function on all the elements.
+
+**For example:**
+
+``` javascript
+const numbers = [2, 4, 6, 8];
+numbers.map((num) => console.log(num * 2)); // Expected result: 4, 8, 12, 16
+```
+
+<Callout type="warning">
+  `map` always returns a new array. Always take that into consideration when you want to loop over many elements in your code.
+</Callout>
+
+#### `pop`
 
 This removes the last element from an array.
 
@@ -351,7 +482,7 @@ fruits.pop();
 console.log(fruits); // Expected result: ["banana", "orange", "pear", "apple"]
 ```
 
-#### push
+#### `push`
 
 This adds an element to the end of an array.
 
@@ -364,7 +495,7 @@ fruits.push("pineapple");
 console.log(fruits); // Expected result: ["banana", "orange", "pear", "apple", "mango", "pineapple"]
 ```
 
-#### forEach
+#### `forEach`
 
 This is used to loop over the elements of an array. Using this, you can perform some function that will iterate over all the elements in the array.
 
@@ -373,11 +504,10 @@ This is used to loop over the elements of an array. Using this, you can perform 
 ``` javascript
 const multiply = [2, 4, 6, 8];
 
-multiply.forEach((number) => number * 2);
-console.log(multiply); // Returns [4, 8, 12, 16]
+multiply.forEach((number) => console.log(number * 2)); // Returns [4, 8, 12, 16]
 ```
 
-#### isArray
+#### `isArray`
 
 The `isArray` method is used to test whether a variable is an array. For example:
 
