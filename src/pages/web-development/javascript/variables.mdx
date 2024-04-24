@@ -1,5 +1,104 @@
 import { Callout } from "nextra-theme-docs";
+import { Steps } from "nextra/components";
 
 # Variables
 
 <Callout>This page is under Construction</Callout>
+
+Variables are "containers" in your code that hold specific values called identifiers. For example:
+
+``` javascript
+age = 26;
+```
+
+Above, `age` is the identifier and `26` is the value assigned to the variable.
+
+## Declaring variables
+
+In JavaScript, variables can be declared in 5 ways:
+
+<Steps>
+  ### Automatically
+
+  In JavaScript, you can declare variables automatically by not using any of the keywords `var`, `let` or `const`. This results in a global variable that is accessible anywhere in your application. For example:
+
+  ``` javascript
+  age = 26; // This is a global variable
+  ```
+
+  However, it is not recommended that you declare variables in this way because it may result in unintended consequences in your application. For example, you might reuse the same variable name in a different part of your application and reassign the value to it - which nullifies the initial declaration. Therefore, if some code was relying on the initial declaration, it is now moot. Do you get it?
+
+  In order to curb this, in 2009, ECMAScript5 (ES5) introduced `strict mode` which throws an error if you use an undeclared variable.
+  
+  <Callout type="info">
+     Strict mode prohibits some JS syntax and eliminates silent errors by making them throw errors.
+
+    > ECMAScript is a standard for scripting languages, most popularly JavaScript, but also JScript and ActionScript and other scripting languages, that ensures interoperability of web pages across different browsers.
+  </Callout>
+
+  ### Using the `var` keyword
+
+  <Callout type="warning">
+    You should only use the `var` keyword if you want your web app to be completely compatible with old browsers. In newer code, use `let` and `const`.
+  </Callout>
+
+  ### Using the `let` keyword
+
+  ### Using the `const` keyword
+
+  ### Destructuring
+</Steps>
+
+## Rules for writing variables
+
+<Steps>
+### Variables should be declared before they are used
+
+It goes without saying that you should declare a variable before you attempt to use it in your code, especially when you are using strict mode and don't want to run into many errors.
+
+### Identifiers are case-sensitive
+
+JavaScript is a case-sensitive language. Therefore, any user-defined identifiers are also case sensitive. This means that `number = 20` and `Number = 20` are two different variables.
+
+### Names can contain letters, digits, underscores and dollar signs
+
+The following declarations are all correct, and define three different variables with the same value.
+
+``` javascript
+  const number = 20;
+  const number20 = 20;
+  const $number = 20;
+  const _number20 = 20;
+```
+
+### Names cannot be reserved words
+
+Reserved words are words that JavaScript has set apart to be used to perform certain things. For example, `let` and `const` are reserved words used to declare variables. Therefore, something similar to the example below will result in an error:
+
+``` javascript
+  let const = 20;
+  const let = 20;
+```
+
+However, this is correct:
+
+``` javascript
+  let number = 20;
+  const age = 20;
+```
+
+</Steps>
+
+## Difference between `let` and `const`
+
+## When to use `let` and when to use `const`
+
+## JavaScript Assignment Operator
+
+In all of the above examples, you have noticed that we have used the `=` sign. In JavaScript, this not the Equal Sign. It is the Assignment Operator. Meaning, it assigns the value on the right, to the identifier on the left.
+
+If you want the Equal Sign in JavaScript, you use double equal signs, i.e `==`.
+
+And if you want strict equality, that is, if you want to check whether two operands are equal and of the same type, you use triple equal signs: `===`.
+
+Read more about arithmetic operators in [Arithmetic Operators](/web-development/javascript/arithmetic-operators)
