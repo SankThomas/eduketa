@@ -28,5 +28,6 @@
   "throttling": "Throttling",
   "javascript-errors": "JavaScript Errors",
   "reserved-words": "JavaScript Reserved Words",
-  "manipulating-the-dom": "Manipulating the DOM"
+  "manipulating-the-dom": "Manipulating the DOM",
+  "javascript-apis": "JavaScript APIs"
 }
