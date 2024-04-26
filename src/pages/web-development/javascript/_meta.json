@@ -1,8 +1,10 @@
 {
   "intro-to-javascript": "Introduction to JavaScript",
   "javascript-interpreter": "How JavaScript is Interpreted",
+  "comments": "Comments in JavaScript",
   "variables": "Variables",
   "arithmetic-operators": "Arithmetic Operators",
+  "conditional-statements": "Conditional Statements",
   "functions": "Functions",
   "arrow-functions": "Arrow Functions",
   "arrays": "Arrays",
@@ -25,5 +27,6 @@
   "debouncing": "Debouncing",
   "throttling": "Throttling",
   "javascript-errors": "JavaScript Errors",
-  "reserved-words": "JavaScript Reserved Words"
+  "reserved-words": "JavaScript Reserved Words",
+  "manipulating-the-dom": "Manipulating the DOM"
 }
