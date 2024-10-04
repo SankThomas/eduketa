@@ -13,6 +13,6 @@ export default {
     text: "Copyright Thomas Sankara 2023",
   },
   chat: {
-    link: "https://discord.com"
+    link: "https://discord.com/invite/TDr42sFD8g"
   }
 };
