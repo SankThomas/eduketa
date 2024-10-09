@@ -117,9 +117,83 @@ for (let x of language) {
 
 ## The `while` loop
 
+The while loop iterates through a block of code as long as the specified condition is true. It has the following syntax:
+
+```js
+while (condition) {
+  // Do something
+  // Increment / Decrement
+}
+```
+
+For example, if you wanted to print a list of numbers between 0 and 10, you could do the following:
+
+```js
+let i;
+
+while (i < 10) {
+  console.log(i);
+  i++;
+}
+```
+
+It is important that with every loop you create, the condition will at one time evaluate to false to prevent an infinite loop. Therefore, always test your loops to ensure the condition will fail at one time so that the loop breaks.
+
 ## The `do...while` loop
+
+Contrary to other loops, the `do...while` loop will always run at least once - even if the condition evaluates to false at the first load. This is because of the syntax which ensures that the `do` statement runs before the `while` statement checks for the condition.
+
+A simpler explanation: It defines a code block to be executed once and then repeated as long as the condition is true.
+
+ It has the syntax:
+
+```js
+do {
+  // Code block to be executed when the condition is true
+} while (condition)
+```
+
+**Example:**
+
+```js
+let i;
+
+do {
+  console.log(i);
+  i++
+} while (i < 10);
+```
 
 ## The `break` statement
 
+This is used to break out of a loop and stop its immediate execution. For example:
+
+```js
+let i;
+
+do {
+  console.log(i);
+  i++;
+  if (i === 5) break;
+} while (i < 10);
+```
+
+The above example will break the loop cycle when `i` evaluates to 5. Using the statement resourcefully can help to ensure you don't accidentally ship out infinite loops which can break your users' browsers.
+
+You will usually see the `break` statement being used with the [`switch` statement](/web-development/javascript/control-flow#switch).
+
 ## The `continue` statement
 
+This is used to skip over a value when executing a loop. For example:
+
+```js
+let i;
+
+do {
+  console.log(i);
+  i++;
+  if (i === 5) continue;
+} while (i < 10);
+```
+
+When the value of `i` equal 5 in the example above, it will not be logged to the console, and the loop will continue to execute until the condition becomes false.
