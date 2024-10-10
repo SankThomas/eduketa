@@ -274,7 +274,7 @@ The above condition for the media query means that the styles inside will apply 
 
 <Callout type="info">
 ### Caution!
-    When adding media queries, make sure that the CSS selectors you use correspond to how you styled them before the media query. Otherwise, you might find the styles in your media query not applying at all, or you might run into bugs in your code which are very hard to debug because vanilla CSS doesn't give you any kind of error handling. For example, don't do this:
+    When adding media queries, make sure that the CSS selectors you use correspond to how you styled them before the media query. Otherwise, you might find the styles in your media query not applying at all, or you might run into bugs in your code which are very hard to debug because vanilla CSS doesn't give you any kind of error handling. For example if you wanted to change the background color of a section that you had, don't do this:
 
     ```css
     section {
@@ -289,6 +289,34 @@ The above condition for the media query means that the styles inside will apply 
     ```
 
     Because CSS will intepret this to be two different elements.
+
+    Instead, do this:
+
+    ```css
+    section {
+        background-color: purple;
+    }
+
+    @media (min-width: 700px) {
+        section {
+            background-color: orange;
+        }
+    }
+    ```
+
+    OR 
+
+    ```css
+    .section-class {
+        background-color: purple;
+    }
+
+    @media (min-width: 700px) {
+        .section-class {
+            background-color: orange;
+        }
+    }
+    ```
 </Callout>
 
 ## Mobile-First Responsive Development
