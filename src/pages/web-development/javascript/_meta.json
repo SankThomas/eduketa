@@ -9,6 +9,7 @@
   "control-flow": "Control Flow and Conditional Statements",
   "loops": "Loops",
   "data-types": "Data Types",
+  "the-typeof-operator": "The typeof Operator",
   "functions": "Functions",
   "arrow-functions": "Arrow Functions",
   "async-await": "Async / Await",
