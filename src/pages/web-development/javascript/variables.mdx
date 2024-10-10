@@ -363,4 +363,39 @@ If you want the Equal Sign in JavaScript, you use double equal signs, i.e `==`.
 
 And if you want strict equality, that is, if you want to check whether two operands are equal and of the same type, you use triple equal signs: `===`.
 
-Read more about arithmetic operators in [Arithmetic Operators](/web-development/javascript/arithmetic-operators)
+Take a look at the example below:
+
+``` javascript
+const name = "Thomas";
+const age = 28;
+
+console.log(name === age);
+```
+
+The above will return `false` because `name` is a string and `age` is an integer, and because they are not equal. Take a look at this second example:
+
+``` javascript
+const name = "Thomas";
+const newName = "Thomas";
+
+console.log(name === newName);
+```
+
+The following will output `true` because both `name` and `newName` are of the same type: they are both strings, and they are of equal value. Therefore, the following examples will also return `true`:
+
+```js
+// First example
+const name = undefined;
+const newName = undefined;
+console.log(name === newName);
+
+// Second example:
+const name = null;
+const newName = null;
+console.log(name === newName);
+```
+
+<Callout type="info">
+  When checking the type of a variable using the [typeof](/web-development/javascript/the-typeof-operator) operand, `null` returns **object** and `undefined` returns **undefined**. Therefore, in the first example above, both variables are of the same type of `undefined` and in the second example, both variables are of the same type of `object`. Take note.
+</Callout>
+
