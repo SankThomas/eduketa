@@ -3,17 +3,15 @@ import { Steps } from "nextra/components";
 
 # Loops
 
-<Callout>This page is under Construction</Callout>
+Loops are a way to execute a certain command or block of code, repeatedly, or over a set number of times. Looping over items is called **iteration**.
 
-Loops are a way to do something, that is, to execute a certain command or block of code, repeatedly, or over a set number of times. Looping over items is called **iteration**.
+To iterate means to perform something again and again.
 
-To iterate means is to perform something again and again.
-
-The way loops work is that they iterate over your code block until a certain condition is met, after which they stop, or until they encounter the `break` statement - just like in a [`switch`](/web-development/javascript/control-flow#switch)
+The way loops work is that they iterate over your code block until a certain condition is met, after which they stop, or until they encounter the [`break`](#the-break-statement) statement - just like in a [`switch`](/web-development/javascript/control-flow#switch)
 
 ## The `for` loop
 
-The `for` loop repeats until your condition evaluates to false, after which is breaks out of the loop. It has the syntax:
+The `for` loop repeats until your condition evaluates to false, after which it breaks out of the loop. It has the syntax:
 
 ``` javascript
 for (initialization; condition; afterthought) {
@@ -36,12 +34,12 @@ The above code block will be executed in the following way:
 <Steps>
 ### Initialization
 
-First, a variables with the name `age` will be initialized to a value of `10`. This initialization can also be defined outside of the `for` loop in the following way:
+First, a variable with the name `age` will be initialized to a value of `10`. This initialization can also be defined outside of the `for` loop in the following way:
 
-``` javascript
+``` javascript {1}
 let age = 10;
 for (age; age < 8; age++) {
-  console.logo("This is a minor");
+  console.log("This is a minor");
 }
 ```
 
@@ -49,9 +47,9 @@ for (age; age < 8; age++) {
 
 Next, JavaScript will move to check whether the condition you have passed in evaluates to either `true` or `false`. If it evaluates to `true` then the loop will continue to the next phase which is the `afterthought` where something like an increment or decrement to your conditional value happens. However, if it evaluates to false, then JavaScript will break out of the loop and stop its execution.
 
-In the example above, our condition evaluates to `true` because. Therefore, we move on to the `afterthought`.
+In the example above, our condition evaluates to `true`. Therefore, we move on to the `afterthought`.
 
-### Afterthought
+### The Afterthought
 
 Here, you can do something like increment or decrement your conditinoal value so that at one time, the condition will have to evaluate to false so that you don't end up with an infinite loop.
 
@@ -129,7 +127,7 @@ while (condition) {
 For example, if you wanted to print a list of numbers between 0 and 10, you could do the following:
 
 ```js
-let i;
+let i = 0;
 
 while (i < 10) {
   console.log(i);
@@ -137,7 +135,7 @@ while (i < 10) {
 }
 ```
 
-It is important that with every loop you create, the condition will at one time evaluate to false to prevent an infinite loop. Therefore, always test your loops to ensure the condition will fail at one time so that the loop breaks.
+It is important to ensure that with every loop you create, the condition will at one time evaluate to **false** to prevent an infinite loop. Therefore, always test your loops to ensure the condition will fail at one time so that the loop breaks.
 
 ## The `do...while` loop
 
@@ -156,7 +154,7 @@ do {
 **Example:**
 
 ```js
-let i;
+let i = 0;
 
 do {
   console.log(i);
@@ -169,7 +167,7 @@ do {
 This is used to break out of a loop and stop its immediate execution. For example:
 
 ```js
-let i;
+let i = 0;
 
 do {
   console.log(i);
