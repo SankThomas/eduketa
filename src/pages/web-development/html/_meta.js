@@ -1,4 +1,4 @@
-{
+export default {
   "html": "What is HTML?",
   "useful-docs": "Useful Docs",
   "additional-setup": "Additional Setup",

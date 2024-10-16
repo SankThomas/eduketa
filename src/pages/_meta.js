@@ -1,4 +1,4 @@
-{
+export default {
   "index": "Welcome To Learnerspree",
   "home": "Getting Started",
   "web-development": "Web Development",

@@ -1,4 +1,4 @@
-{
+export default {
   "fetch": "The Fetch API",
   "clipboard": "The Clipboard API",
   "navigation": "The Navigation API",

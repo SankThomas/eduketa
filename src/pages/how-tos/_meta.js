@@ -1,4 +1,4 @@
-{
+export default {
   "carousel-js": "Create a Carousel in JavaScript",
   "carousel-react": "Create a Carousel in ReactJs",
   "authentication-clerk": "Integrate Clerk Authentication in your NextJs App",

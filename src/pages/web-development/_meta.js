@@ -1,4 +1,4 @@
-{
+export default {
   "html": "Learn HTML5",
   "css": "Learn CSS",
   "javascript": "Learn JavaScript",

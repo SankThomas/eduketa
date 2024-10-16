@@ -1,4 +1,4 @@
-{
+export default {
   "css": "What Is CSS?",
   "why-css": "Why Use CSS?",
   "css-syntax": "CSS Syntax",

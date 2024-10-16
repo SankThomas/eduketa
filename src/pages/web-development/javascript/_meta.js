@@ -1,4 +1,4 @@
-{
+export default {
   "intro-to-javascript": "Introduction to JavaScript",
   "javascript-interpreter": "How JavaScript is Interpreted",
   "comments": "Comments in JavaScript",
