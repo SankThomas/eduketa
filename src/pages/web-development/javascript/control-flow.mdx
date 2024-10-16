@@ -115,7 +115,7 @@ function person() {
 
 ## switch
 
-The switch statement is used to compare many different conditions and the execute a certain code block. `switch` is used to remove the cumbersome nature of `if else` statements. It has the syntax:
+The switch statement is used to compare many different conditions and then execute a certain code block. `switch` is used to remove the cumbersome nature of `if else` statements. It has the syntax:
 
 ``` javascript
 switch (expression) {
@@ -132,7 +132,7 @@ switch (expression) {
 
 **For Example:**
 
-``` javascript
+``` javascript copy
 let age = 25;
 switch(age) {
   case 12:
@@ -159,28 +159,28 @@ switch(age) {
 
 This example will get the current day of the week and log it to the console.
 
-``` javascript
+``` javascript copy
 switch (new Date().getDay()) {
   case 0:
-    day = "Sunday";
+    console.log("Sunday");
     break;
   case 1:
-    day = "Monday";
+    console.log("Monday");
     break;
   case 2:
-     day = "Tuesday";
+    console.log("Tuesday");
     break;
   case 3:
-    day = "Wednesday";
+   	console.log("Wednesday");
     break;
   case 4:
-    day = "Thursday";
+    console.log("Thursday");
     break;
   case 5:
-    day = "Friday";
+    console.log("Friday");
     break;
   case 6:
-    day = "Saturday";
+    console.log("Saturday");
 }
 ```
 
@@ -263,7 +263,7 @@ You can also add a `finally` block inside `try...catch` and this block will alwa
 
 **For Example:**
 
-``` javascript
+``` javascript {5-6}
 try {
   const response = fetch("https://api.spacexdata.com/v4/rockets").then((data) => console.log(data));
 } catch(error) {
