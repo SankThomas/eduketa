@@ -9,7 +9,8 @@
 }
 
 ::selection {
-  @apply bg-orange-700 text-white;
+  color: #008AE6;
+  background-color: #172229;
 }
 
 body {
