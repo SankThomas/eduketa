@@ -1,8 +1,8 @@
 export default {
-  "fetch": "The Fetch API",
-  "clipboard": "The Clipboard API",
-  "navigation": "The Navigation API",
-  "history": "The History API",
-  "fullscreen": "The Fullscreen API",
-  "webvtt": "The WebVTT API"
+  "Fetch": "The Fetch API",
+  "Clipboard": "The Clipboard API",
+  "Navigation": "The Navigation API",
+  "History": "The History API",
+  "Fullscreen": "The Fullscreen API",
+  "WebVTT": "The WebVTT API"
 }

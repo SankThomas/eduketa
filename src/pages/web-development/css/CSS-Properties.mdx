@@ -2548,6 +2548,17 @@ p {
 It defines the minimum width for each column.
 
 ### `content`
+This is used alongside the `::before` and `::after` pseudo-elements to insert content before or after an element.
+
+```css
+p::before {
+  content: "*"; /* Will add an asterisk before every paragraph element */
+}
+```
+
+The `content` property can be used to do much more, such as adding cutom bullets on lists. [Here is a reference](https://www.w3schools.com/cssref/pr_gen_content.php) to [W3Schools](https://w3schools.com) where you can read more.
+
+> Read more about pseudo elements [here](/web-development/css/css-pseudo-elements);
 
 ### `counter-increment`
 
@@ -3007,26 +3018,269 @@ It defines the minimum width for each column.
 
 ### `translate`
 
+This allows you to change the position of an element.
+
+**Example:**
+
+```css
+div {
+  translate: 50px;
+}
+```
+
+You can also define multiple values in order to define an element in a 2D space or 3D space.
+
+**Example:**
+
+```css
+/* 2D Example */
+div {
+  translate: 50px 80px;
+}
+
+/* 3D Example */
+div {
+  translate: 50px 80px 120px;
+  perspective: 100px;
+}
+```
+
+<Callout> When defining a 3D translation, you also need to define the [perspective](#perspective) property.</Callout>
+
 ### `unicode-bidi`
+
+This is used together with the [direction](#direction) property in order to define whether the text should be overriden to support multiple languages in the same document. The default is `normal`.
+
+[Further Reading and Examples](https://www.w3schools.com/cssref/pr_text_unicode-bidi.php)
 
 ### `user-select`
 
+This specifies whether a user should be able to highlight text. The default value is `auto`.
+
+**Example:**
+
+```css
+/* Users will not be able to select and highlight text */
+button {
+  user-select: none;
+}
+
+/* Allow the user to select text */
+button {
+  user-select: text;
+}
+
+/* Text will be selected with a SINGLE CLICK instead of a DOUBLE CLICK */
+button {
+  user-select: all;
+}
+```
+
 ### `vertical-align`
+
+This sets the vertical alignment of an element.
+
+**Example:**
+
+```css
+/* Align an image with the middle of the parent element */
+img {
+  vertical-align: middle;
+}
+
+/* Align an image with the top of the parent element */
+img {
+  vertical-align: top;
+}
+
+/* Align an image with the bottom of the parent element */
+img {
+  vertical-align: bottom;
+}
+```
+
+Read more about [Vertical Align](https://www.w3schools.com/cssref/pr_pos_vertical-align.php)
 
 ### `visibility`
 
+Specifies whether an element is visible or not.
+
+**Example:**
+
+```css
+div {
+  visibility: hidden;
+}
+```
+
+> When the visibility is hidden, it will not show the element, but the element will still be part of the document flow. If you want to both hide the element and remove if from the document flow, use the `display: none` property instead.
+
+> You can also use absolute positioning on the element with `opacity: 0` in order to achieve the same behaviour, but this is relative to what you want to achieve.
+
 ### `white-space`
+
+Handles white space inside an element.
+
+**Example:**
+
+```css
+
+p {
+  /* White space is preserved and text will wrap when necessary */
+  white-space: normal;
+}
+
+/* Text will not wrap and will continue until a <br> tag is introduced */
+  p {
+    white-space: nowrap;
+  }
+
+/* Behaves like preformatted text. Text will not wrap */
+p {
+  white-space: pre;
+}
+
+/* Sequences of white space will collapse into a single whitespace.
+Text will wrap when necessary and on line breaks
+*/
+p {
+  white-space: pre-line;
+}
+
+/* Text will wrap on line breaks and when necessary */
+p {
+  white-space: pre-wrap;
+}
+```
 
 ### `widows`
 
+This property is usually used to print media to specify how many lines should be left at the top of the page. It is usually used in tandem with the [`orphans`](#orphans) property.
+
+**Example:**
+
+```css
+/* Specifying a media query that targets print media */
+@media print {
+  orphans: 4; /* Lines to be left at the bottom of the page */
+  widows: 2; /* Lines to be left at the top of the page */
+}
+```
+
 ### `width`
+
+Specifies the width of an element. Width does not include paddings, margins or borders.
+
+**Example:**
+
+```css
+button {
+  width: 300px;
+}
+```
+
+> You will usually want to have elements take up their own full width and only modify their widths when it is necessary.
 
 ### `word-break`
 
+This specifies how words should break when they reach the end of the line. The default value is `normal`.
+
+**Example:**
+
+```css
+p {
+  word-break: normal; /* Uses the default line break rules */
+}
+
+p {
+  word-break: break-all; /* Word breaks can apply at any character */
+}
+
+p {
+  word-break: keep-all; /* Specifies that word breaks should not be used for Chinese/Japanese/Korean (CJK) text */
+}
+
+p {
+  word-break: break-word; /* This is deprecated. Don't use it */
+}
+```
+
 ### `word-spacing`
+
+This is used to manage the white space between words, to either increase it or decrease it. The default value is `normal`.
+
+**Example:**
+
+```css
+p {
+  word-spacing: 30px;
+}
+
+p {
+  word-spacing: 10px;
+}
+```
+
+The higher the value you give to word-spacing, the more separated the words will be. Test out the values to get to the exact spacing that works for your current project.
 
 ### `word-wrap`
 
+This breaks words and wraps them onto the next line. The default value is `normal`.
+
+**Example:**
+
+```html
+<p>Antidisestablishmentarianism</p>
+```
+
+```css
+p {
+  word-wrap: break;
+  /* Adding a fixed width in order to demonstrate the property */
+  width: 100px;
+}
+```
+
 ### `writing-mode`
 
+This specifies how text is laid out in the browser.
+
+**Example:**
+
+```css
+p {
+  writing-mode: horizontal-tb; 
+}
+
+p {
+  writing-mode: vertical-rl; 
+}
+```
+
 ### `z-index`
+
+This specifies the stack order of elements relative to the viewer. Elements with a higher `z-index` appear closer to the user than elements with a lower `z-index`.
+
+**Example:**
+
+```css
+div {
+  position: relative;
+  z-index: 1;
+}
+
+button {
+  position: absolute;
+  z-index: 10;
+  top: 10px;
+  right: 10px;
+}
+```
+
+The above example will show a `<div>` element with a button positioned at its top-right. The button is visible because we have defined it to have a higher `z-index` than the `<div>` element.
+
+<div className="bg-emerald-400 p-4 h-40 w-full max-w-lg relative mt-4">
+  <button className="absolute top-4 right-4 z-10 text-sm bg-rose-600 font-semibold py-1 px-2 rounded">I have a higher z-index</button>
+</div>
+
+> `z-index` only works on elements that are positioned or elements that are direct children of flex elements. Here are relevant modules on the same: [CSS Positioning](/web-development/css/CSS-Positioning) and [CSS Flexbox](/web-development/css/CSS-Flexbox).
