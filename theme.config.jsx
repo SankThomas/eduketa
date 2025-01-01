@@ -10,7 +10,7 @@ export default {
   },
   docsRepositoryBase: "https://github.com/SankThomas/learnerspree/tree/main",
   footer: {
-    text: "Copyright Thomas Sankara 2024",
+    text: "Copyright Thomas Sankara " + new Date().getFullYear(),
   },
   chat: {
     link: "https://discord.com/invite/TDr42sFD8g"
