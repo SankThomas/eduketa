@@ -10,7 +10,7 @@ export default {
   "css-vendor-prefixes": "CSS Vendor Prefixes",
   "css-rules": "CSS At-Rules",
   "media-queries": "CSS Media Queries And Responsiveness",
-  "deeply-nested-elements": "Deeply Nested Elements",
+  "deeply-nested-elements": "How to Style Deeply Nested Elements",
   "css-functions": "CSS Functions", 
   "css-variables": "CSS Variables",
   "css-units": "CSS Units",
