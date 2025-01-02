@@ -1,3 +1,3 @@
 export default {
-  "Introduction": "Introduction"
+  "introduction": "Introduction"
 }

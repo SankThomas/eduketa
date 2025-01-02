@@ -1,3 +1,3 @@
 export default {
-  "Projects": "What We'll Build"
+  "projects": "What We'll Build"
 }

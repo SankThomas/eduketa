@@ -1,6 +1,6 @@
 export default {
-  "Overview": "Overview",
-  "Principles-Of-Information-Security": "Principles of Information Security",
-  "Cybersecurity-Threats": "Cybersecurity Threats",
-  "Legal-And-Ethics": "Legal and Ethics",
+  "overview": "Overview",
+  "principles-of-information-security": "Principles of Information Security",
+  "cybersecurity-threats": "Cybersecurity Threats",
+  "legal-and-ethics": "Legal and Ethics",
 }
