@@ -3,6 +3,7 @@ export default {
   "home": "Getting Started",
   "web-development": "Web Development",
   "react-native": "Mobile App Development",
+  "electron": "Desktop App Development",
   "cybersecurity": "Cybersecurity",
   "projects": "Projects",
   "how-tos": "How Tos",
