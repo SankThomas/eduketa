@@ -8,6 +8,9 @@ export default {
       titleTemplate: "Learnerspree | %s",
     };
   },
+  sidebar: {
+    defaultMenuCollapseLevel: 1
+  },
   docsRepositoryBase: "https://github.com/SankThomas/learnerspree/tree/main",
   footer: {
     text: "Copyright Thomas Sankara " + new Date().getFullYear(),
