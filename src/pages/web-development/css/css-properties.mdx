@@ -2968,7 +2968,53 @@ The `content` property can be used to do much more, such as adding cutom bullets
 
 ### `text-align`
 
+This defines how to place the text in your web app.
+
+**Example:**
+
+```css
+/* Aligns the text to the center */
+div {
+  text-align: center;
+}
+
+/* Aligns the text to the left */
+div {
+  text-align: left;
+}
+
+/* Aligns the text to the right */
+div {
+  text-align: right;
+}
+
+/* Justifies the text like in newspapers */
+div {
+  text-align: justify;
+}
+
+/* Sets it to its default value */
+div {
+  text-align: initial;
+}
+
+/* Inherit text alignment from the parent */
+div {
+  text-align: inherit;
+}
+```
+
 ### `text-align-last`
+
+This specifies how to align the last line of text.
+
+**Example:**
+
+```css
+div {
+  text-align-last: left;
+}
+```
 
 ### `text-combine-upright`
 
@@ -3002,19 +3048,195 @@ The `content` property can be used to do much more, such as adding cutom bullets
 
 ### `transform`
 
+This property allows you to apply a 2D or 3D transformation to elements. It can take in a number of values to help you rotate, skew and scale elements.
+
+**Example:**
+
+```html filename="index.html" copy
+<p>This is an example to demonstrate the transform property.</p>
+```
+
+```css filename="index.css" copy
+p {
+  transform: rotateX(20deg);
+}
+
+p {
+  transform: rotateY(20deg);
+}
+
+p {
+  transform: skewY(20deg);
+}
+
+p {
+  transform: scaleY(1.5);
+}
+
+p {
+  transform: scale(2);
+}
+
+p {
+  transform: translate(20px, 40px);
+}
+```
+
+Here is a [reference](https://www.w3schools.com/cssref/css3_pr_transform.php) with examples from [W3Schools](https://w3schools.com).
+
 ### `transform-origin`
+
+This allows you to change the position of transformed elements. It must be used together with the `transform` property.
+
+**Example:**
+
+```css filename="index.css" copy
+p {
+  transform-origin: center top;
+}
+
+p {
+  transform-origin: 10% bottom;
+}
+```
 
 ### `transform-style`
 
+This specifies how nested elements are rendered in a 3D space.
+
+**Example:**
+
+```css filename="index.css" copy
+/* The element will not preserve its 3D position. This is the default value */
+div {
+  transform-origin: flat;
+}
+
+/* Elements should preserve their 3D position */
+div {
+  transform-origin: preserve-3d;
+}
+```
+
 ### `transition`
+
+This is used to define animations in your web app. It is the shorthand property for:
+
+1. `transition-property`
+2. `transition-duration`
+3. `transition-timing-function`
+4. `transition-delay`.
+
+<Callout type="info">
+  You must always define the `transition-duration`. Otherwise, the value will be 0 and the transition will have no effect.
+</Callout>
+
+It has the syntax:
+
+```
+transition: property duration timing-function delay;
+```
+
+**Example:**
+
+```css filename="index.css" copy
+div {
+  background-color: rebeccapurple;
+  width: 200px;
+  height: 200px;
+  transition: background-color 5s;
+}
+
+div:hover {
+  background-color: orange;
+}
+```
+
+This will gradually change the background color of the `div` from rebeccapurple to orange over 5 seconds. In the example above, we have used neither a **timing-function** nor a **delay**. Here is a full example with all properties used.
+
+**Example:**
+
+```css filename="index.css' copy
+div {
+  transition: background-color 5s ease-in-out 0.5s;
+}
+```
 
 ### `transition-delay`
 
+This specifies the amount of time to delay the transition animation before it starts.
+
+```css filename="index.css' copy
+div {
+  transition-delay: 5s;
+}
+```
+
 ### `transition-duration`
+
+This specifies the amount of time that the transition animation should take.
+
+```css filename="index.css' copy
+div {
+  transition-duration: 5s;
+}
+```
 
 ### `transition-property`
 
+This specifies the property that the transition should animate.
+
+```css filename="index.css' copy
+/* Transition only the background color */
+div {
+  transition-property: background-color;
+}
+
+/* Transition all the properties */
+div {
+  transition-property: all;
+}
+```
+
 ### `transition-timing-function`
+
+This specifies the speed curve of the animation, to allow you to change the speed of the animation over time.
+
+**Example:**
+
+``` css filename="index.css" copy
+/* Default value: The transition is slow, fast, slow */
+div {
+  transition-timing-function: ease; 
+}
+
+/* The transition will have the same speed */
+div {
+  transition-timing-function: linear;
+}
+
+/* The transition will have a slow start */
+div {
+  transition-timing-function: ease-in; 
+}
+
+/* The transition will have a slow end */
+div {
+  transition-timing-function: ease-out; 
+}
+
+/* The transition will have a slow start and slow end */
+div {
+  transition-timing-function: ease-in-out; 
+}
+
+/* Define your own timing using the cubic-bezier function
+The values for each step should be greater than 0 but less than 1
+*/
+div {
+  transition-timing-function: cubic-bezier(0, 0.5, 0.8, 1); 
+}
+```
 
 ### `translate`
 
