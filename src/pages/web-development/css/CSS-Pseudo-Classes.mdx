@@ -71,6 +71,53 @@ document.querySelector("button").addEventListener("click", () => {
 
 ### `:modal`
 
+This is used to target an element that is in a modal state - a state in which it prevents interactions with elements outside until it has been dismissed.
+
+**[Example from MDN:](https://developer.mozilla.org/en-US/docs/Web/CSS/:modal)**
+
+```html filename="index.html" copy
+<p>Would you like to see a new random number?</p>
+<button id="showNumber">Show me</button>
+
+<dialog id="favDialog">
+  <form method="dialog">
+    <p>Lucky number is: <strong id="number"></strong></p>
+    <button>Close dialog</button>
+  </form>
+</dialog>
+```
+
+```css filename="index.css" copy
+button {
+  display: block;
+  margin: auto;
+  width: 10rem;
+  height: 2rem;
+}
+
+:modal {
+  background-color: beige;
+  border: 2px solid burlywood;
+  border-radius: 5px;
+}
+
+p {
+  color: black;
+}
+```
+
+```js filename="index.js" copy
+const showNumber = document.getElementById('showNumber');
+const favDialog = document.getElementById('favDialog');
+const number = document.getElementById('number');
+
+showNumber.addEventListener('click', () => {
+  number.innerText = Math.floor(Math.random() * 1000);
+  favDialog.showModal();
+});
+```
+
+Run this example on your machine to see how `:modal` works, or [view it on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/:modal)
 
 ### `:picture-in-picture`
 

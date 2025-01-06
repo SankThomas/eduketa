@@ -1,0 +1,26 @@
+import { Steps } from "nextra/components";
+
+# Rules for writing hooks
+
+Hooks follow a few rules that are easy to grasp:
+
+<Steps>
+### Only use hooks in function components
+
+Hooks are a feature that were introduced in React v16.8 and were designed to add state to function components. Therefore, they cannot be used outside of function components since you can add state to class components without the use of hooks.
+
+### Only call hooks at the top level of components
+
+Do not call hooks inside loops, conditions or nested statements to ensure that the hooks are called in the same order for each render. Remember that JavaScript is interpreted from top to bottom.
+
+### Always prefix hooks with `use`
+
+When defining your own custom hooks, always prefix them with the word `use` and then the hook name. For example, `useFetch` and `useTimer` and `useLocalStorage`. This will help inform other developers that they are custom hooks.
+
+### Hook names are camelCased
+
+Hooks names are camelCased as opposed to PascalCased. This helps to tell React that they are hooks and not components. React interprets elements beginning with capital letters as components.
+
+</Steps>
+
+Simple, concise and clear.

@@ -8,10 +8,6 @@
   scroll-behavior: smooth;
 }
 
-html {
-  font-size: 14px !important;
-}
-
 ::selection {
   color: #008AE6;
   background-color: #172229;

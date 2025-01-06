@@ -1,8 +1,9 @@
 export default {
   "index": "Welcome To Learnerspree",
-  "Home": "Getting Started",
+  "home": "Getting Started",
   "web-development": "Web Development",
   "react-native": "Mobile App Development",
+  "electron": "Desktop App Development",
   "cybersecurity": "Cybersecurity",
   "projects": "Projects",
   "how-tos": "How Tos",
@@ -13,7 +14,7 @@ export default {
     "href": "https://twitter.com/tsbsankara",
     "newWindow": true
   },
-  "About": {
+  "about": {
     "title": "About The Author",
     "type": "page"
   }
