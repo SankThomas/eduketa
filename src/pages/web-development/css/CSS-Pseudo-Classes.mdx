@@ -33,7 +33,7 @@ Matches an element that is currently in fullscreen mode.
 
 **Example:**
 
-```css
+```css filename="index.css" copy
 div {
   background-color: orange;
 }
@@ -47,7 +47,7 @@ In the above example, when the browser is not in fullscreen mode, the `div` will
 
 Here is some additional HTML and JavaScript code that will toggle fullscreen mode so that you can see it in action:
 
-```html
+```html filename="index.html" copy
 <div>
   <h1>Fullscreen mode demo</h1>
   <p>Orange background when not in fullscreen and skyblue background when in fullscreen</p>
@@ -55,7 +55,7 @@ Here is some additional HTML and JavaScript code that will toggle fullscreen mod
 </div>
 ```
 
-```js
+```js filename="index.js" copy
 document.querySelector("button").addEventListener("click", () => {
   // Checks if the document is already in fullscreen mode
   // and toggles out of fullscreen if it already is.
