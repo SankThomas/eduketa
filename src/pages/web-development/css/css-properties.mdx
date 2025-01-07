@@ -2724,25 +2724,184 @@ The `content` property can be used to do much more, such as adding cutom bullets
 
 ### `margin`
 
+This is used to add a space (margin) around elements.
+
+**Margin** is the shorthand property for:
+  - `margin-top`
+  - `margin-right`
+  - `margin-bottom`
+  - `margin-left`
+
+**Example:**
+
+```css
+/* Applies margin all around the element */
+div {
+  margin: 10px;
+}
+
+/* Applies a margin of 10px on the top and bottom and 20px on the left and right */
+div {
+  margin: 10px 20px;
+}
+
+/* Applies a margin of 10px on the top, 20px on the left and right, and 30px on the bottom */
+div {
+  margin: 10px 20px 30px;
+}
+
+/* Applies a margin of 10px on the top, 20px on the right, 30px on the bottom and 40px on the left */
+div {
+  margin: 10px 20px 30px 40px;
+}
+```
+
+<Callout type="info">
+  The values for margins and padding are evaluated in a clockwise order: top, right, bottom and then left.
+</Callout>
+
 ### `margin-block`
+
+This appllies margin in the block direction.
+
+> Block direction depends on the primary language. For example, block direction in English downward.
+
+**Example:**
+
+```css
+/* Margin at the start and end is 10px */
+div {
+  margin-block: 10px;
+}
+
+/* Margin at the start is 10px and at the end it is 20px */
+div {
+  margin-block: 10px 20px;
+}
+```
+
+It is a shorthand property for:
+  - `margin-block-start`
+  - `margin-block-end`
 
 ### `margin-block-end`
 
+Specifies a margin at the end in the block direction.
+
+**Example:**
+
+```css
+div {
+  margin-block-end: 20px;
+}
+```
+
 ### `margin-block-start`
+
+Specifies a margin at the start in the block direction.
+
+**Example:**
+
+```css
+div {
+  margin-block-start: 20px;
+}
+```
 
 ### `margin-bottom`
 
+Adds margin to the bottom of the element.
+
+**Example:**
+
+```css
+div {
+  margin-bottom: 20px;
+}
+```
+
 ### `margin-inline`
+
+Defines the margin at the start and end in the inline direction. Inline direciton in English is left to right.
+
+**Example:**
+
+```css
+/* Margin at the start and end is 20px; */
+div {
+  margin-inline: 20px;
+}
+
+/* Margin at the start is 10px and 20px at the end */
+div {
+  margin-inline: 10px 20px;
+}
+```
+
+It is a shorthand property for:
+
+  - `margin-inline-start`
+  - `margin-inline-end`
 
 ### `margin-inline-end`
 
+Specifies a margin at the end of the element in the inline direction.
+
+**Example:**
+
+```css
+div {
+  margin-inline-end: 20px;
+}
+```
+
 ### `margin-inline-start`
+
+Specifies a margin a the start of the element in the inline direction.
+
+**Example:**
+
+```css
+div {
+  margin-inline-start: 20px;
+}
+```
 
 ### `margin-left`
 
+Adds margin to the left of the element.
+
+**Example:**
+
+```css
+div {
+  margin-left: 20px;
+}
+```
+
 ### `margin-right`
 
+Adds margin to the right of the element.
+
+**Example:**
+
+```css
+div {
+  margin-right: 20px;
+}
+```
+
 ### `margin-top`
+
+Adds margin to the top of the element.
+
+**Example:**
+
+```css
+div {
+  margin-top: 20px;
+}
+```
 
 ## Mask
 
