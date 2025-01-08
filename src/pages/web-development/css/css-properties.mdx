@@ -432,7 +432,7 @@ p.reset {
 
 This will make the paragraph that has a class of `reset` to reset its current styles to the default styles of the document.
 
-## Animation properties
+## Animation Properties
 
 ### `animation`
 
@@ -709,7 +709,7 @@ div {
   about Vendor Prefixes in the module, [CSS Vendor Prefixes](/web-development/css/css-vendor-prefixes)
 </Callout>
 
-## Background properties
+## Background Properties
 
 ### `background`
 
@@ -993,7 +993,7 @@ In such a case as above, the first value specified is always set to the width of
 
 Aside from using percentages, you can also use other CSS Units such as pixels (`px`) and viewport heights (`vh`).
 
-## Border properties
+## Border Properties
 
 ### `border`
 
@@ -2720,7 +2720,7 @@ The `content` property can be used to do much more, such as adding cutom bullets
 
 ### `list-style-type`
 
-## Margin
+## Margin Properties
 
 ### `margin`
 
@@ -2903,7 +2903,7 @@ div {
 }
 ```
 
-## Mask
+## Mask Properties
 
 ### `mask`
 
@@ -2949,7 +2949,7 @@ div {
 
 ### `object-position`
 
-## Offset
+## Offset Properties
 
 ### `offset`
 
@@ -2967,7 +2967,7 @@ div {
 
 ### `orphans`
 
-## Outline
+## Outline Properties
 
 ### `outline`
 
@@ -2979,7 +2979,7 @@ div {
 
 ### `outine-width`
 
-## Overflow
+## Overflow Properties
 
 ### `overflow`
 
@@ -3001,7 +3001,7 @@ div {
 
 ### `overscroll-behavior-y`
 
-## Padding
+## Padding Properties
 
 ### `padding`
 
@@ -3033,7 +3033,7 @@ div {
 
 ### `paint-order`
 
-## Perspective
+## Perspective Properties
 
 ### `perspective`
 
@@ -3063,7 +3063,7 @@ div {
 
 ### `scroll-behavior`
 
-## Scroll Margin
+## Scroll Margin Properties
 
 ### `scroll-margin`
 
@@ -3087,7 +3087,7 @@ div {
 
 ### `scroll-margin-top`
 
-## Scroll Padding
+## Scroll Padding Properties
 
 ### `scroll-padding`
 
@@ -3123,7 +3123,7 @@ div {
 
 ### `table-layout`
 
-## Text
+## Text Properties
 
 ### `text-align`
 
@@ -3175,35 +3175,374 @@ div {
 }
 ```
 
-### `text-combine-upright`
-
 ### `text-decoration`
+
+This specifies the type of decoration to add to text such as an underline and line-through.
+
+It is the shorthand property for:
+
+-  `text-decoration-line` (required)
+-  `text-decoration-color`
+-  `text-decoration-style`
+-  `text-decoration-thickness`
+
+**Example:**
+
+```css
+/* A link with a simple underline */
+a {
+  text-decoration: underline;
+}
+
+/* A link with a rec, dotted underline and overline */
+a {
+  text-decoration: underline overline dotted red;
+}
+
+/* A link with a 5px, blue and wavy underline */
+a {
+  text-decoration: underline wavy blue 5px;
+}
+```
+
+### `text-decoration-color`
+
+Specifies the color of the underline.
+
+**Example:**
+
+```css
+a {
+  text-decoration: underline;
+  text-decoration-color: cyan;
+}
+```
 
 ### `text-decoration-line`
 
+This specifies the type of underline or overline.
+
+**Example:**
+
+```css
+a {
+  text-decoration: underline;
+}
+
+a {
+  text-decoration: overline;
+}
+
+/* Specifies both an underline and overline on the same line */
+a {
+  text-decoration: underline overline;
+}
+```
+
 ### `text-decoration-style`
+
+This sets the style of the underline: solid, dotted, dashed or double.
+
+**Example:**
+
+```css
+a {
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+}
+
+a {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+}
+
+a {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+}
+
+a {
+  text-decoration-line: underline;
+  text-decoration-style: double;
+}
+```
 
 ### `text-decoration-thickness`
 
-### `text-emphasis`
+Sets the thickness of the text decoration line.
 
-### `text-indent`
+**Example:**
 
-### `text-justify`
+```css
+a {
+  text-decoration: underline;
+  text-decoration-thickness: 5px;
+}
 
-### `text-orientation`
+a {
+  text-decoration: overline;
+  text-decoration-thickness: auto;
+}
 
-### `text-overflow`
-
-### `text-shadow`
-
-### `text-transform`
+a {
+  text-decoration: underline;
+  text-decoration-thickness: 10%;
+}
+```
 
 ### `text-underline-position`
 
+This specifies the position of underline text decorations.
+
+**Example:**
+
+```css
+/* The default value */
+a {
+  text-decoration: underline;
+  text-underline-position: auto;
+}
+
+/* Sets the underline below the alphabetic baseline
+The alphabetic baseline is the line on which most letters sit
+and the line below which most descenders extend.
+Descenders are letters like g and y.
+*/
+a {
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+/* This will use the underline position in the font file if it has been defined.
+If not, it reverts to the default: auto
+*/
+a {
+  text-decoration: underline;
+  text-underline-position: from-font;
+}
+
+/* In vertical writing mode, the underline will be on the left.
+In horizontal writing mode, the underline reverts to auto */
+a {
+  text-decoration: underline;
+  text-underline-position: left;
+}
+
+/* In vertical writing mode, the underline will be on the right.
+In horizontal writing mode, the underline reverts to auto */
+a {
+  text-decoration: underline;
+  text-underline-position: right;
+}
+```
+
+### `text-emphasis`
+
+This applies emphasis marks to text.
+
+```css
+/* The value can be one of the following */
+p {
+  text-emphasis: filled | open | dot | circle | double-circle | triangle | sesame | string | color | initial | inherit;
+}
+```
+
+**Example:**
+
+```css
+p {
+  text-emphasis: filled;
+}
+```
+
+It is the shorthand property for:
+
+- `text-emphasis-style`
+- `text-emphasis-color`
+
+**Example:**
+
+```css
+p {
+  text-emphasis-style: double-circle;
+}
+
+/* Sets the color of the empahsis marks to red */
+p {
+  text-emphasis-color: red;
+}
+```
+
+### `text-indent`
+
+This is used to specify the indentation of the first line in a text block.
+
+**Example:**
+
+```css
+p {
+  text-indent: 50px;
+}
+
+/* You can also use negative values */
+p {
+  text-indent: -20px;
+}
+```
+
+<Callout type="info">
+  You can use negative values in `text-indent`. If you use a negative value, the text will be indented to the left. If you use a positive value, the text will be indented to the right.
+</Callout>
+
+### `text-justify`
+
+This is used to set the justification method of text when you have `text-align: justify`.
+
+**Example:**
+
+```css
+/* The default value */
+p {
+  text-align: justify;
+  text-justify: auto;
+}
+
+/* Increase or decrease the space between words */
+p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Increases or decreases the space between characters */
+p {
+  text-align: justify;
+  text-justify: inter-character;
+}
+
+/* Disable justification methods */
+p {
+  text-align: justify;
+  text-justify: none;
+}
+
+/* Sets justification to its initial value */
+p {
+  text-align: justify;
+  text-justify: initial;
+}
+
+/* Inherits the justification method from the parent */
+p {
+  text-align: justify;
+  text-justify: inherit;
+}
+```
+
+### `text-orientation`
+
+This specifies the orientation of characters.
+
+**Example:**
+
+```css
+p {
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+}
+```
+
+This can be especially useful when working with tables because it can help you to orient long text in an upright manner so that they don't take up much space.
+
+It can be one of the following values: `mixed | upright | sideways | sideways-right | use-glyph-orientation | initial | inherit `
+
+<Callout type="warning">
+  `text-orientation` only works when `writing-mode` is set to `vertical-lr`.
+</Callout>
+
+### `text-overflow`
+
+This is used to define how overflown text will be shown to the user.
+
+**Example:**
+
+```css
+p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Will show three dots */
+}
+```
+
+The value can be one of the following: `clip | ellipsis | string | initial | inherit`;
+
+<Callout type="warning">`text-overflow: string` only works in Firefox.</Callout>
+
+### `text-shadow`
+
+This adds shadow to text.
+
+**Example:**
+
+```css
+p {
+  text-shadow: 4px 4px #000000;
+}
+```
+
+You can also add more shadows by separating them with a comma.
+
+```css
+p {
+  text-shadow: 4px 4px #000000, 6px 6px #ff0000;
+  /* You can add more values separated by commas */
+}
+```
+
+It has the syntax:
+
+`text-transform: horizontal-value vertical-value blur-radius color`
+
+The `blur-radius` is not a required value. The others are all required when defining the shadow.
+
+### `text-transform`
+
+This is used to specify the capitalization of text.
+
+**Example:**
+
+```css
+/* Set the text to UPPERCASE */
+p {
+  text-transform: uppercase;
+}
+
+/* Set the text to lowercase */
+p {
+  text-transform: lowercase;
+}
+
+/* Set Every First Letter Of Every Word To Be Capitalized */
+p {
+  text-transform: capitalize.
+}
+```
+
 ### `top`
 
-## Transform
+This sets the vertical position of a positioned element. Therefore, if an element is not positioned, this property will have no effect.
+
+**Example:**
+
+```css
+div {
+  position: absolute;
+  top: 100px;
+}
+```
+
+> NOTE: When position is set to static: `position: static`, the `top` property has no effect.
+
+## Transform Properties
 
 ### `transform`
 
@@ -3390,7 +3729,8 @@ div {
 }
 
 /* Define your own timing using the cubic-bezier function
-The values for each step should be greater than 0 but less than 1
+The values for each step should be greater than 0 but less than 1,
+with the values comma-separated
 */
 div {
   transition-timing-function: cubic-bezier(0, 0.5, 0.8, 1); 
