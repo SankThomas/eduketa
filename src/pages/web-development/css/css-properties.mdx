@@ -2971,35 +2971,302 @@ div {
 
 ### `outline`
 
+This is used to specify a line that is drawn outside of the element.
+
+It is the shorthand property for:
+
+  - `outline-width`
+  - `outline-style`
+  - `outline-color`
+
+The outline style is a required value. It can be one of: `solid | dashed | dotted | double`
+
+**Example:**
+
+```css
+button {
+  outline: 2px solid #10b581;
+}
+```
+
 ### `outline-color`
+
+This sets the color of the outline.
+
+**Example:**
+
+```css {4}
+button {
+  outline-width: 2px;
+  outline-style: solid;
+  outline-color: red;
+}
+```
 
 ### `outline-offset`
 
+This is used to add a space between the outline and the edge of the element. Using the [CSS Box Model](/web-development/css/css-box-model), Outlines are placed on the outside of elements.
+
+**Example:**
+
+```css
+button {
+  outline: 4px dotted red;
+  outline-offset: 20px;
+}
+```
+
 ### `outline-style`
 
-### `outine-width`
+This is used to set the style of the outline. This is a required property when defining the outline, otherwise the color and width will not show.
+
+**Example:**
+
+```css
+/* Should be one of the following values */
+button {
+  outline-style: solid | dashed | dotted | double;
+}
+```
+
+### `outline-width`
+
+This is used to define the width of the outline.
+
+**Example:**
+
+```css {3}
+button {
+  outline-style: solid;
+  outline-width: 20px;
+  outline-color: red;
+}
+```
 
 ## Overflow Properties
 
 ### `overflow`
 
+This specifies whether to clip content or to show scrollbars when an elements content is too much to fit in a specified area. A good example of overflow is when the content on your website is more than the height of your device so that is enables you to scroll.
+
+**Example:**
+
+```css
+/* The default value */
+div {
+  overflow: visible;
+}
+
+/*
+If the content is more that the height or width specified,
+the scrollbars will be shown. Otherwise, no scrollbars.
+*/
+div {
+  overflow: auto;
+}
+
+/*
+The overflow is clipped, but a scrollbar will be added
+in order to show the rest of the content.
+*/
+div {
+  overflow: scroll;
+}
+
+/* 
+If the content is more than the specified height or width,
+the overflow will be clipped and the rest of the content will
+be invisible, but can be scrolled programmatically.
+*/
+div {
+  overflow: hidden;
+}
+
+/*
+The overflow is clipped and the rest of the content will
+be invisible. This blocks all scrolling, even programmatically.
+*/
+div {
+  overflow: clip;
+}
+```
+
+<Callout type="info">The `overflow` property only works on block elements that have a specified height.</Callout>
+
 ### `overflow-anchor`
+
+This specifies how the browser will behave when more content loads above the position where the user is currently at.
+
+Usually, this causes the content to jump when more content loads above the current scroll position. Using `overflow-anchor`, you can set the scroll position not to jump anymore and vastly improve the user experience.
+
+**Example:**
+
+```css
+div {
+  width: 500px;
+  height: 500px;
+  overflow-anchor: auto;
+}
+```
+
+[See this example from W3Schools](https://www.w3schools.com/cssref/tryit.php?filename=trycss_overflow-anchor).
+
+<Callout type="warning">
+  `overflow-anchor` does not work on Safari browsers.
+</Callout>
 
 ### `overflow-wrap`
 
+This specifies whether the browser should break long lines or words if they overflow the container.
+
+**Example:**
+
+```css
+/* Long lines and words do not break even if they overflow.
+This is the default value. */
+div {
+  overflow-wrap: normal;
+}
+
+/* Words and lines are broken if they overflow the container */
+div {
+  overflow-wrap: break-word;
+}
+
+/* Words and lines are broken if they overflow the container */
+div {
+  overflow-wrap: anywhere;
+}
+```
+
 ### `overflow-x`
+
+This is used to define an overflow on the x-axis (left and right).
+
+**Example:**
+
+```css
+/* The default value */
+div {
+  overflow-x: visible;
+}
+
+/* Content is clipped and a scrollbar is shown */
+div {
+  overflow-x: scroll;
+}
+
+/* Content is clipped and scrollbars are not shown */
+div {
+  overflow-x: hidden;
+}
+
+/* In case there are overflows, scrollbars will be shown */
+div {
+  overflow-x: auto;
+}
+```
 
 ### `overflow-y`
 
+This is used to define an overflow on the y-axis (up and down).
+
+**Example:**
+
+```css
+/* The default value */
+div {
+  overflow-y: visible;
+}
+
+/* Content is clipped and a scrollbar is shown */
+div {
+  overflow-y: scroll;
+}
+
+/* Content is clipped and scrollbars are not shown */
+div {
+  overflow-y: hidden;
+}
+
+/* In case there are overflows, scrollbars will be shown */
+div {
+  overflow-y: auto;
+}
+```
+
 ### `overscroll-behavior`
+
+This is used to turn off **scroll chaining** or **overscroll affordance** when you scroll past the scroll boundary.
+
+For example, ever seen how you can have two elements, with both elements being scrollable, and when you reach the end of the inner element then the outside element automatically starts to scroll? That's the default behaviour, and this property turns it off.
+
+The behavior above is called *scroll chaining**.
+
+<Callout type="info">
+  On `overscroll-affordance` is when you reach the end of the scrollable element and then it causes a refresh of the entire page as well as giving you visual feedback that you have reached the end.
+</Callout>
+
+**Example:**
+
+```css
+/* Does not allow overscroll affordance */
+div {
+  overscroll-behavior: contain;
+}
+```
 
 ### `overscroll-behavior-block`
 
+This is used to turn off **scroll chaining** and **overscroll affordance** on an element when you try to scroll past the scroll boundary in the block direction.
+
+Note that the block direction is dependent on the language, as well as the `writing-mode` property. In English, the block direction is downward.
+
+**Example:**
+
+```css
+div {
+  overscroll-behavior-block: contain;
+}
+```
+
 ### `overscroll-behavior-inline`
 
-### `overscroll-behacior-x`
+This is used to turn off **scroll chaining** and **overscroll affordance** on an element when you try to scroll past the scroll boundary in the inline direction.
+
+Note that the inline direction is dependent on the language, as well as the `writing-mode` property. In English, the inline direction is left to right.
+
+**Example:**
+
+```css
+div {
+  overscroll-behavior-inline: contain;
+}
+```
+
+### `overscroll-behavior-x`
+
+This defines overscroll behaviour on the x-axis (left and right).
+
+**Example:**
+
+```css
+div {
+  overscroll-behavior-x: contain;
+}
+```
 
 ### `overscroll-behavior-y`
+
+This defines overscroll behaviour on the y-axis (up and down).
+
+**Example:**
+
+```css
+div {
+  overscroll-behavior-y: contain;
+}
+```
 
 ## Padding Properties
 
