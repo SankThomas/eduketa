@@ -2953,19 +2953,167 @@ div {
 
 ### `offset`
 
+This is used to animate an element along a path. It is the shorthand property for:
+
+- `offset-anchor`
+- `offset-distance`
+- `offset-path`
+- `offset-position`
+- `offset-rotate`
+
+**Example:**
+
+```css
+/* Offset path, distance, anchor and rotate */
+img {
+  offset: path('M 50 80 C 150 -20 250 180 350 80') 150px auto 45deg;
+}
+```
+
+[See this example from W3Schools](https://www.w3schools.com/cssref/tryit.php?filename=trycss_offset)
+
 ### `offset-anchor`
+
+This specifies the point of an element to be fixed along a path defined in the `offset-path` property.
+
+**Example:**
+
+```css
+img {
+  offset-path: path('M 50 80 C 150 -20 250 180 350 80');
+  offset-anchor: right center;
+}
+```
 
 ### `offset-distance`
 
+This sets the distance of an element from the start of the path defined in the `offset-path` property.
+
+**Example:**
+
+```css
+img {
+  offset-path: path('M 50 80 C 150 -20 250 180 350 80');
+  offset-distance: 500px;
+}
+```
+
 ### `offset-path`
+
+This creates a path for an element to follow.
+
+**Example:**
+
+```css
+div {
+  offset-path: path('M20,170 L100,20 L180,100 Z');
+  animation: aniamteDiv 3s 3;
+}
+
+@keyframes aniamteDiv {
+  100% { offset-distance: 100%; }
+}
+```
+
+### `offset-position`
+
+This specifies the intial position of an element along a path.
+
+**Example:**
+
+```css
+div {
+  offset-position: bottom right;
+  offset-path: path('M20,170 L100,20 L180,100 Z');
+}
+```
 
 ### `offset-rotate`
 
+This sets the rotation of an animated element.
+
+**Example:**
+
+```css
+img {
+  offset-rotate: auto;
+}
+
+img {
+  offset-rotate: auto 90deg;
+}
+
+img {
+  offset-rotate: 90deg;
+}
+```
+
 ### `opacity`
+
+This is used to set the transparency (opacity) of an element.
+
+**Example:**
+
+```css {5}
+div {
+  background-color: blue;
+  width: 300px;
+  height:: 300px;
+  opacity: 0.5;
+}
+```
+
+The value of the opacity must be 0 or greater than 0, but less than 1, with 1 representing no opacity and 0 representing full opacity (see through).
+
+You can also specify opacity using the alpha values when defining the color of an element.
+
+**Example:**
+
+```css
+/* A black color with 50% (0.5) opacity */
+div {
+  background-color: rgba(0,0,0,0.5);
+}
+```
 
 ### `order`
 
+This specifies the order of a flexible item relative to the rest of the flexible items in the same container.
+
+<Callout type="info">The `order` property only works when the element is a flex item.</Callout>
+
+**[Example from W3Schools:](https://www.w3schools.com/cssref/tryit.php?filename=trycss3_order)**
+
+```css
+div#myRedDIV {
+  order: 2;
+}
+div#myBlueDIV {
+  order: 4;
+}
+div#myGreenDIV {
+  order: 3;
+}
+div#myPinkDIV {
+  order: 1;
+}
+```
+
 ### `orphans`
+
+This specifies the minimum number of lines that must be left at the bottom of a page or column.
+
+It is usually used together with the [widows](#widows) property.
+
+**Example:**
+
+```css
+/* Specifying a media query that targets print media */
+@media print {
+  orphans: 4; /* Lines to be left at the bottom of the page */
+  widows: 2; /* Lines to be left at the top of the page */
+}
+```
 
 ## Outline Properties
 
